@@ -10,7 +10,7 @@ module.exports = class extends Generator {
     super(...args);
     this.props = {
       projectName: "synthetics-local",
-      adminApiKey: ""
+      userApiKey: ""
     };
   }
 
@@ -25,8 +25,8 @@ module.exports = class extends Generator {
       },
       {
         type: "input",
-        name: "adminApiKey",
-        message: "Enter your admin Api Key",
+        name: "userApiKey",
+        message: "Enter your user Api Key",
         when: resp => resp.enableRemoteConnection
       },
       {

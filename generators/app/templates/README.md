@@ -60,7 +60,7 @@ Untracked files:
 	package-lock.json
 	package.json
 ```
-**Note:** The admin key is stored in `.nrconfig.json` and is not commited see `.gitignore`
+**Note:** The user key is stored in `.nrconfig.json` and is not commited see `.gitignore`
 
 
 ## Download / Upload monitor

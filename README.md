@@ -38,7 +38,7 @@ yo @crshanks/nrsynthetics-workspace
 
 2. Select `Yes` (default) when prompted `? Enable Download/Upload of Synthetics scripts to your account?`
 
-3. Enter your Admin API Key when prompted, if you answered `Yes` from step-1.
+3. Enter your User API Key when prompted, if you answered `Yes` from step-1.
 
 ```
 This generator can also be run with: yo @crshanks/nrsynthetics-workspace
@@ -55,11 +55,11 @@ This generator can also be run with: yo @crshanks/nrsynthetics-workspace
  ´   `  |° ´ Y `
 
 ? Enable Download/Upload of Synthetics scripts to your account? Yes
-? Enter your admin Api Key NRAA-XXXXXXXXXXXXXXXXXXXXXXXXXXX
+? Enter your user Api Key NRAK-XXXXXXXXXXXXXXXXXXXXXXXXXXX
 ? Initialize local Git repo? Yes
 
 ```
-A workspace is created called `synthetics-local`, the admin key will be stored in `.nrconfig.json`.
+A workspace is created called `synthetics-local`, the user key will be stored in `.nrconfig.json`.
 
 Note: A local repo is setup for you, which would allow you to track and manage your local changes. To configure your local Git repo see [Customizing Git Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration).
 
@@ -117,7 +117,7 @@ Untracked files:
 	package-lock.json
 	package.json
 ```
-**Note:** The admin key is stored in `.nrconfig.json` and is not commited see `.gitignore`
+**Note:** The user key is stored in `.nrconfig.json` and is not commited see `.gitignore`
 
 
 ## Download / Upload & Manage monitor
