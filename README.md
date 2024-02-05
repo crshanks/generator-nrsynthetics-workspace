@@ -20,28 +20,28 @@ First, install [Yeoman](http://yeoman.io) and generator-nrsynthetics-workspace u
 
 ```bash
 npm install -g yo
-npm install -g @tanben/generator-nrsynthetics-workspace
+npm install -g @crshanks/generator-nrsynthetics-workspace
 ```
 
 Then generate your new project:
 
 ```bash
 
-yo @tanben/nrsynthetics-workspace
+yo @crshanks/nrsynthetics-workspace
 
 ```
 
 
 ## Generating a NR Synthetics workspace
 
-1. Run `yo @tanben/nrsynthetics-workspace` from commandline
+1. Run `yo @crshanks/nrsynthetics-workspace` from commandline
 
 2. Select `Yes` (default) when prompted `? Enable Download/Upload of Synthetics scripts to your account?`
 
 3. Enter your Admin API Key when prompted, if you answered `Yes` from step-1.
 
 ```
-This generator can also be run with: yo @tanben/nrsynthetics-workspace
+This generator can also be run with: yo @crshanks/nrsynthetics-workspace
 
 
      _-----_     ╭──────────────────────────╮
