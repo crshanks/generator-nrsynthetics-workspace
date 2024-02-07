@@ -3,7 +3,12 @@
 require("chromedriver");
 const chrome = require("selenium-webdriver/chrome");
 const driver = require("selenium-webdriver");
-const http = require("request");
+const http = require("got");
+const selenium = require('selenium-webdriver');
+if (!global._isApiTest) {
+  global.$webDriver = new selenium.Builder().forBrowser('chrome').build();
+}
+
 
 const util = {
   insights: {
@@ -131,3 +136,4 @@ global.$browser = browser;
 global.$util = util;
 global.$env = env;
 global.$http = http;
+global.$selenium = selenium;

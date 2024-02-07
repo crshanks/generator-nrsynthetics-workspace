@@ -1,8 +1,16 @@
+const IS_LOCAL_ENV = typeof $env === "undefined" || $env === null;
+
+// Uncomment the following lines to hide console messages
+// console.log = function() {}
+// console.debug = function() {}
+
 /**
  * For local development
  */
-if (typeof $env === "undefined" || $env === null) {
+if (IS_LOCAL_ENV) {
   require("../lib/simulator");
+  var $secure = new Object();
+  $secure.MY_SECURE_CRED = "Top Secret";
 }
 
 /**
@@ -11,29 +19,42 @@ if (typeof $env === "undefined" || $env === null) {
  * for details.
  */
 
+/** Config **/
+var colors = require('colors');
+const ELEMENT_WAIT_TIMER = 10000;
+/** Config **/
+
 var assert = require("assert");
 
-$browser
-  .get("http://example.com")
-  .then(function() {
-    // Check the H1 title matches "Example Domain"
-    return $browser.findElement($driver.By.css("h1")).then(function(element) {
-      return element.getText().then(function(text) {
-        assert.equal("Example Domain", text, "Page H1 title did not match");
-      });
-    });
-  })
-  .then(function() {
-    // Check that the external link matches "https://www.iana.org/domains/example"
-    return $browser
-      .findElement($driver.By.css("div > p > a"))
-      .then(function(element) {
-        return element.getAttribute("href").then(function(link) {
-          assert.equal(
-            "https://www.iana.org/domains/example",
-            link,
-            "More information link did not match"
-          );
-        });
-      });
-  });
+async function doStuff() {
+  await $webDriver.get("http://example.com");
+
+  let headerElementCss = "h1";
+  console.log('Getting header element'.green);
+  await $webDriver.wait($selenium.until.elementLocated($selenium.By.css(headerElementCss)), ELEMENT_WAIT_TIMER, colors.red('Failed to locate element: ' + headerElementCss));  //wait for element to be located on page (instead of using sleep)
+  let text = await $webDriver.findElement($selenium.By.css(headerElementCss)).getText(); //find element on page
+  console.log('Checking H1 title'.green);
+  assert.equal("Example Domain", text, "Page H1 title did not match");
+  console.log('H1 title correct'.green);
+  
+  let hrefCss = "div > p > a";
+  console.log('Getting header element'.green);
+  await $webDriver.wait($selenium.until.elementLocated($selenium.By.css(hrefCss)), ELEMENT_WAIT_TIMER, colors.red('Failed to locate element: ' + hrefCss))  //wait for element to be located on page (instead of using sleep)
+  let link = await $webDriver.findElement($selenium.By.css(hrefCss)).getAttribute("href"); //find element on page
+  console.log('Checking href'.green);
+  assert.equal("https://www.iana.org/domains/example", link, "More information link did not match");  
+  console.log('href correct'.green);
+}
+
+/**
+ * The scripts main function and starting point.
+ */
+async function main() {
+  let response = await doStuff();
+
+  console.log('main(): Script execution completed');
+}
+
+
+// Let's get this party started
+main();
