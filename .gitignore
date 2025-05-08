@@ -3,3 +3,5 @@ coverage
 .npmrc
 .nrconfig.json
 .nrconfig.json.tmpl
+# ignore all .DS_store files
+.DS_Store
