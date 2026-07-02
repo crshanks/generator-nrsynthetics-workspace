@@ -1,19 +1,25 @@
 {
   "name": "@crshanks/generator-nrsynthetics-workspace",
   "version": "0.2.0",
-  "description": "Generate local workspace for creating/testing NR Synthetics ScriptedBrowse and API Tests.",
-  "homepage": "https://github.com/crshanks",
+  "description": "Generate local workspace for creating/testing NR Synthetics Scripted Browser and API Tests.",
+  "homepage": "https://github.com/crshanks/generator-nrsynthetics-workspace",
   "author": {
-    "name": "Benedicto Tan",
-    "email": "ben.tan.dev@gmail.com",
-    "url": "https://github.com/tanben/generator-nrsynthetics-workspace"
+    "name": "Craig Shanks",
+    "url": "https://github.com/crshanks"
   },
+  "contributors": [
+    {
+      "name": "Benedicto Tan",
+      "email": "ben.tan.dev@gmail.com",
+      "url": "https://github.com/tanben/generator-nrsynthetics-workspace"
+    }
+  ],
   "repository": "git://github.com/crshanks/generator-nrsynthetics-workspace.git",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "bugs": {
-    "url": "https://github.com/tanben/generator-nrsynthetics-workspace/issues"
+    "url": "https://github.com/crshanks/generator-nrsynthetics-workspace/issues"
   },
   "files": [
     "generators"
