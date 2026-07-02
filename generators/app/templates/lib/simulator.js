@@ -1,6 +1,9 @@
 // Synthetics Simulator
 
-require("chromedriver");
+// Note: no explicit chromedriver dependency. selenium-webdriver (4.6+) bundles
+// Selenium Manager, which auto-downloads a driver matching the locally installed
+// Chrome. This mirrors New Relic's runtime (selenium-webdriver 4.36.0) and avoids
+// pinning a chromedriver version that breaks every time Chrome auto-updates.
 const chrome = require("selenium-webdriver/chrome");
 const driver = require("selenium-webdriver");
 const http = require("got");

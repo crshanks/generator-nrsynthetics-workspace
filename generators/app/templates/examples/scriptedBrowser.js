@@ -42,7 +42,7 @@ async function doStuff() {
   await $webDriver.wait($selenium.until.elementLocated($selenium.By.css(hrefCss)), ELEMENT_WAIT_TIMER, colors.red('Failed to locate element: ' + hrefCss))  //wait for element to be located on page (instead of using sleep)
   let link = await $webDriver.findElement($selenium.By.css(hrefCss)).getAttribute("href"); //find element on page
   console.log('Checking href'.green);
-  assert.equal("https://www.iana.org/domains/example", link, "More information link did not match");  
+  assert.equal("https://iana.org/domains/example", link, "More information link did not match");
   console.log('href correct'.green);
 }
 
