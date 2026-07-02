@@ -8,9 +8,6 @@ const chrome = require("selenium-webdriver/chrome");
 const driver = require("selenium-webdriver");
 const http = require("got");
 const selenium = require('selenium-webdriver');
-if (!global._isApiTest) {
-  global.$webDriver = new selenium.Builder().forBrowser('chrome').build();
-}
 
 
 const util = {
@@ -136,6 +133,10 @@ browser.getCurrentUrl = function() {
 
 global.$driver = driver;
 global.$browser = browser;
+// In New Relic's runtime, $webDriver and $browser reference the same driver
+// session. Point both at the single browser instance so only one Chrome window
+// launches (building two separate drivers left a stray window sitting at data:,).
+global.$webDriver = browser;
 global.$util = util;
 global.$env = env;
 global.$http = http;
