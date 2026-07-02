@@ -5,8 +5,8 @@
 const IS_LOCAL_ENV = typeof $env === "undefined" || $env === null;
 
 // Uncomment the following lines to hide console messages
-console.log = function() {}
-console.debug = function() {}
+// console.log = function() {}
+// console.debug = function() {}
 
 /**
  * Feel free to explore, or check out the full documentation
@@ -35,7 +35,7 @@ var assert = require("assert");
 async function main() {
   try {
     let response = await $http.post(
-      "http://httpbin.org/post",
+      "https://postman-echo.com/post",
       // Post data
       {
         json: {
@@ -44,12 +44,13 @@ async function main() {
         }
       });
 
-      assert.equal(response.statusCode, 200, "Expected a 200 OK response");
-      let body = JSON.parse(response.body);
-      let data = JSON.parse(body.data);
-      console.log("Response body:", body.data);
-      assert.equal(data.widgetType, "gear", "Expected a gear widget type");
-      assert.equal(data.widgetCount, 10, "Expected 10 widgets");
+    assert.equal(response.statusCode, 200, "Expected a 200 OK response");
+    let body = JSON.parse(response.body);
+    // Postman Echo returns the posted JSON back under the "json" property.
+    let data = body.json;
+    console.log("Response body:", data);
+    assert.equal(data.widgetType, "gear", "Expected a gear widget type");
+    assert.equal(data.widgetCount, 10, "Expected 10 widgets");
   } catch (error) {
     console.error(error.message);
   }

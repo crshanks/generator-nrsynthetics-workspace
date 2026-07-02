@@ -4,10 +4,16 @@
 
 
 ### Generate New Relic Synthetics workspace for local development, for **Scripted Browsers and API tests**.
-## Requirementes
-* [Node.js/NPM](https://www.npmjs.com/get-npm)
+## Requirements
+* [Node.js/NPM](https://www.npmjs.com/get-npm) (Node 22+, matching New Relic's current Synthetics runtime)
 * [Chrome Browser](https://www.google.com/chrome/)
 * [Git CLI](https://git-scm.com/downloads). This generator can automatically setup a local; Git, repo for you.
+
+> **Note on `npm audit`:** `npm install` reports a few advisories in build/tooling
+> dependencies (e.g. `geckodriver`, `inquirer`). These are pinned to match New Relic's
+> Synthetics runtime and are not reachable when running your scripts locally, so they can
+> be safely ignored. Do **not** run `npm audit fix --force` — it will upgrade dependencies
+> away from the versions New Relic actually runs.
 
 
 #### Files
@@ -118,8 +124,9 @@ Go to troubleshooting section if you received an error:
 > Can't find Node.js binary "node": path does not exist. Make sure Node.js is installed and in your PATH, or set the "runtimeExecutable" in your launch.json
 
 ```
-btan@local:~/synthetics-local$ node examples/apiTest.js
-Response: { widgetCount: 10, widgetType: 'gear' }
+$ node examples/apiTest.js
+Response body: { widgetType: 'gear', widgetCount: 10 }
+main(): Script execution completed
 
 ```
 ### Scripted Browser
