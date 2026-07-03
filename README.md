@@ -233,6 +233,10 @@ Example:
 }
 ```
 
+## Acknowledgements
+
+This project is a fork of [generator-nrsynthetics-workspace](https://github.com/tanben/generator-nrsynthetics-workspace), originally created by **Benedicto Tan**. This fork keeps the generated workspace aligned with New Relic's current Node 22 Synthetics runtime. Many thanks to Ben for the original work.
+
 ## License
 
 Apache-2.0
