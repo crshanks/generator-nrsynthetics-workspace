@@ -1,6 +1,6 @@
 {
   "name": "@crshanks/generator-nrsynthetics-workspace",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Generate local workspace for creating/testing NR Synthetics Scripted Browser and API Tests.",
   "homepage": "https://github.com/crshanks/generator-nrsynthetics-workspace",
   "author": {
