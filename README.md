@@ -18,6 +18,9 @@
 
 ## Installation
 
+> **New to this?** For step-by-step setup on Windows, macOS, or Linux (including
+> installing Node.js from scratch) see the [Setup Guide](docs/SETUP.md).
+
 First, install [Yeoman](http://yeoman.io) and generator-nrsynthetics-workspace using [npm](https://www.npmjs.com/).
 
 ```bash
@@ -201,7 +204,7 @@ Browser opens
 > harmless log lines to the terminal (e.g. `PHONE_REGISTRATION_ERROR`,
 > `USB: ... Element not found`, `Created TensorFlow Lite XNNPACK delegate`).
 > These come from the Chrome process shutting down, not from your script, and
-> can be ignored — the run has already finished successfully.
+> can be ignored; the run has already finished successfully.
 
 
 ## Troubleshooting

@@ -12,7 +12,7 @@
 > **Note on `npm audit`:** `npm install` reports a few advisories in build/tooling
 > dependencies (e.g. `geckodriver`, `inquirer`). These are pinned to match New Relic's
 > Synthetics runtime and are not reachable when running your scripts locally, so they can
-> be safely ignored. Do **not** run `npm audit fix --force` — it will upgrade dependencies
+> be safely ignored. Do **not** run `npm audit fix --force`; it will upgrade dependencies
 > away from the versions New Relic actually runs.
 
 
@@ -146,7 +146,7 @@ Browser opens
 > harmless log lines to the terminal (e.g. `PHONE_REGISTRATION_ERROR`,
 > `USB: ... Element not found`, `Created TensorFlow Lite XNNPACK delegate`).
 > These come from the Chrome process shutting down, not from your script, and
-> can be ignored — the run has already finished successfully.
+> can be ignored; the run has already finished successfully.
 
 
 ## Troubleshooting
